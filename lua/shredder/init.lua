@@ -83,20 +83,6 @@ require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
-  -- WhichKey
-   use {
-     "folke/which-key.nvim",
-     config = function()
-       vim.o.timeout = true
-       vim.o.timeoutlen = 300
-       require("which-key").setup {
-         -- your configuration comes here
-         -- or leave it empty to use the default settings
-         -- refer to the configuration section below
-       }
-     end
-   }
-
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
