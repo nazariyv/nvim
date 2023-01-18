@@ -5,7 +5,7 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = { 'bash', 'c', 'dockerfile', 'cpp', 'go', 'graphql', 'help', 'lua', 'python', 'rust', 'solidity', 'terraform', 'typescript', 'vim', 'yaml', 'json', 'help' },
 
   highlight = { enable = true },
-  indent = { enable = true },
+  indent = { enable = true, disable = { 'python' } },
   incremental_selection = {
     enable = true,
     keymaps = {
