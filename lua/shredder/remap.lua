@@ -57,3 +57,6 @@ vim.keymap.set('v', '>', '>gv')
 
 -- press quickly jk to emulare Esc key
 vim.keymap.set('i', 'jk', '<ESC>')
+
+-- for terminal toggle
+vim.keymap.set('n', '<leader>t', ':ToggleTerm direction=float<CR>')
