@@ -59,7 +59,7 @@ vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('i', 'jk', '<ESC>')
 
 -- write and close all windows
-vim.keymap.set('n', '<leader>q', ':wqa<CR>')
+vim.keymap.set('n', '<leader>qq', ':wqa<CR>')
 
 -- for terminal toggle
 vim.keymap.set('n', '<leader>t', ':ToggleTerm direction=float<CR>')
