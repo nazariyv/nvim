@@ -53,11 +53,44 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
   gopls = {},
-  -- pyright = {},
   rust_analyzer = {},
   tsserver = {},
+  -- TODO: these are all invalid entries but are the things I have installed
+  -- in my Mason. Figre out how to install them
+  -- luaformatter = {},
+  -- python_lsp_server = {},
+  -- prettier = {},
+  -- nginx_language_server = {},
+  -- mypy = {},
+  -- luacheck = {},
+  -- markdownlint = {},
+  -- luau_lsp = {},
+  -- jsonlint = {},
+  -- json_lsp = {},
+  -- graphql_language_service_cli = {},
+  -- isort = {},
+  -- html_lsp = {},
+  -- grammarly_languageserver = {},
+  -- dockerfile_language_server = {},
+  -- docker_compose_language_service = {},
+  -- bash_language_server = {},
+  -- ansible_lint = {},
+  -- ansible_language_server = {},
+  -- yamllint = {},
+  -- yamlfmt = {},
+  -- yaml_language_server = {},
+  -- terraform_ls = {},
+  -- solidity = {},
+  -- solhint = {},
+  -- rustfmt = {},
+  -- ruff_lsp = {},
+  -- ruff = {},
+  -- typescript_language_server = {},
+  -- lua_language_server = {},
+  -- black = {},
+  -- clangd = {},
+  -- solidity_ls = {}
 
   -- sumneko_lua = {
   --   Lua = {
