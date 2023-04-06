@@ -93,6 +93,8 @@ local servers = {
   -- * to check if yamlls is indeed attached to current buffer write :LspInfo
   -- * I am going to leave this comment in here for some time as a note to recall
   -- * the steps I have done if I ever need to refresh my memory
+  -- + for the full suite of options for yamlls see:
+  -- + https://github.com/redhat-developer/yaml-language-server#language-server-settings
   yamlls = {
     yaml = {
       keyOrdering = false,
