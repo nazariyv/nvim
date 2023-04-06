@@ -59,7 +59,6 @@ local servers = {
   ansiblels = {},
   bashls = {},
   dockerls = {},
-  docker_compose_language_service = {},
   cssls = {},
   cssmodules_ls = {},
   unocss = {},
@@ -79,7 +78,18 @@ local servers = {
   taplo = {},
   tailwindcss = {},
   terraformls = {},
-  yamlls = {}
+  -- ! spent way over one hour and could not make this work
+  -- ! every yaml file would be ridden with "Wrong ordering of key "XXX" in
+  -- ! mapping". 
+  -- ! docs here: https://github.com/redhat-developer/yaml-language-server#language-server-settings
+  -- ! mention by default keyOrdering should be false, but it is not.
+  -- yamlls = {
+  --   yaml = {
+  --     keyOrdering = {
+  --       enable = false
+  --     }
+  --   }
+  -- }
 }
 
 -- Setup neovim lua configuration
