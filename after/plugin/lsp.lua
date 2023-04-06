@@ -83,13 +83,21 @@ local servers = {
   -- ! mapping". 
   -- ! docs here: https://github.com/redhat-developer/yaml-language-server#language-server-settings
   -- ! mention by default keyOrdering should be false, but it is not.
-  -- yamlls = {
-  --   yaml = {
-  --     keyOrdering = {
-  --       enable = false
-  --     }
-  --   }
-  -- }
+  -- ! I am not including 'settings' key here because of the way mason-lspconfig
+  -- ! pulls the settings below. But according to these dot files, my config
+  -- ! should work: https://github.com/folke/dot/blob/6dbf11746c9d1e0883ab8db4703e29a2d85606d7/nvim/lua/plugins/lsp.lua#L90
+  -- * above expresses my frustration. however I have made it work. I needed to
+  -- * avoid the `settings` key, and then also instead of writing
+  -- * keyOrdering = { enabled = false } I had to keyOrdering = false directly
+  -- * I also had to manually remove yaml-language-server in :Mason
+  -- * to check if yamlls is indeed attached to current buffer write :LspInfo
+  -- * I am going to leave this comment in here for some time as a note to recall
+  -- * the steps I have done if I ever need to refresh my memory
+  yamlls = {
+    yaml = {
+      keyOrdering = false,
+    },
+  }
 }
 
 -- Setup neovim lua configuration
