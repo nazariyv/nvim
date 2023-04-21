@@ -53,30 +53,15 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  gopls = {},
   rust_analyzer = {},
   tsserver = {},
   ansiblels = {},
   bashls = {},
   dockerls = {},
-  cssls = {},
-  cssmodules_ls = {},
-  unocss = {},
-  diagnosticls = {},
-  eslint = {},
-  elixirls = {},
-  golangci_lint_ls = {},
   graphql = {},
-  html = {},
   jsonls = {},
-  ltex = {},
   lua_ls = {},
-  marksman = {},
   ruff_lsp = {},
-  sqlls = {},
-  solang = {},
-  taplo = {},
-  tailwindcss = {},
   terraformls = {},
   -- ! spent way over one hour and could not make this work
   -- ! every yaml file would be ridden with "Wrong ordering of key "XXX" in
