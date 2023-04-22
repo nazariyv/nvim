@@ -20,10 +20,6 @@ require('packer').startup(function(use)
     end
   })
 
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end}
-
   use('mbbill/undotree')
 
   use { -- LSP Configuration & Plugins
@@ -32,16 +28,12 @@ require('packer').startup(function(use)
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-
       -- Useful status updates for LSP
       'j-hui/fidget.nvim',
-
       -- Additional lua configuration, makes nvim stuff amazing
       'folke/neodev.nvim',
     },
   }
-
-  use { "github/copilot.vim" }
 
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -61,8 +53,6 @@ require('packer').startup(function(use)
   }
 
   -- Git related plugins
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
