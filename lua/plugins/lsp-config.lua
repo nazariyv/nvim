@@ -3,6 +3,18 @@ return {
 		"williamboman/mason.nvim",
 		config = function()
 			require("mason").setup()
+
+			-- install these (mason-lspconfig does not allow to install anything
+			-- other than the lsp). so we need this script to help us out
+			local ensure_installed = {
+				"shellcheck",
+				"black",
+			}
+			vim.api.nvim_create_user_command("MasonInstallAll", function()
+				if ensure_installed and #ensure_installed > 0 then
+					vim.cmd("MasonInstall " .. table.concat(ensure_installed, " "))
+				end
+			end, {})
 		end,
 	},
 	{
@@ -18,12 +30,10 @@ return {
 					"clangd",
 					"ruff_lsp",
 					"pyright",
-					"black",
-					"nomicfoundation-solidity-language-server",
 					"graphql",
 					"bashls",
 					"jsonls",
-					"shellcheck",
+					"solidity_ls_nomicfoundation",
 				},
 			})
 		end,
