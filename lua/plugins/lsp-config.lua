@@ -18,9 +18,12 @@ return {
 					"clangd",
 					"ruff_lsp",
 					"pyright",
+					"black",
+					"nomicfoundation-solidity-language-server",
 					"graphql",
 					"bashls",
 					"jsonls",
+					"shellcheck",
 				},
 			})
 		end,
