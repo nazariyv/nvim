@@ -9,4 +9,10 @@ return {
 			require("Comment").setup(opts)
 		end,
 	},
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end
+  }
 }
