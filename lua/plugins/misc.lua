@@ -1,14 +1,13 @@
 return {
-  -- it's commented out because of the following issue I experienced:
-  -- having nvim tree open and some code buffer, as well as vertical split
-  -- you will only switch between buffer and split OR nvim tree and split
-  -- you will not switch between nvim tree -> buffer -> split
-  -- outside of tmux, however, the following switching works
-  -- I will just remove this plugin and use my terminal's (kitty) native tabs...
-  -- {
-  -- 	"christoomey/vim-tmux-navigator",
-  -- 	lazy = false,
-  -- },
+  -- poetry causes issues: https://github.com/christoomey/vim-tmux-navigator/issues/230
+  -- to have tmux navigator work nominally, rather than running poetry shell
+  -- and then nvim .
+  -- do: poetry run nvim
+  -- ! Note: this plugin requires tmux config as well
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
   {
     "numToStr/Comment.nvim",
     config = function(_, opts)

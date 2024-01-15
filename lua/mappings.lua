@@ -4,10 +4,10 @@ local vk = vim.keymap
 vk.set("n", ";", ":", { desc = "enter command mode", nowait = true })
 vk.set("n", "<C-d>", "<C-d>zz", { desc = "when moving page down center" })
 vk.set("n", "<C-u>", "<C-u>zz", { desc = "when moving page up center" })
-vk.set('n', '<C-h>', '<C-w>h', { desc = "Window left" })
-vk.set('n', '<C-l>', '<C-w>l', { desc = "Window right" })
-vk.set('n', '<C-j>', '<C-w>j', { desc = "Window down" })
-vk.set('n', '<C-k>', '<C-w>k', { desc = "Window up" })
+-- vk.set('n', '<C-h>', '<C-w>h', { desc = "Window left" })
+-- vk.set('n', '<C-l>', '<C-w>l', { desc = "Window right" })
+-- vk.set('n', '<C-j>', '<C-w>j', { desc = "Window down" })
+-- vk.set('n', '<C-k>', '<C-w>k', { desc = "Window up" })
 vk.set('n', '<C-s>', '<cmd> w <CR>', { desc = "Save file" })
 vk.set('n', '<C-c>', '<cmd> %y+ <CR>', { desc = "Copy whole file" })
 vk.set("n", "<leader>y", '"+y', { desc = "yanks into +" })
@@ -28,10 +28,10 @@ vk.set('n', '<leader>b', '<cmd> enew <CR>', { desc = "New buffer" })
 
 -- see comment in misc.lua why I am not using tmux navigator
 -- for tmux navigator
--- vk.set('n', '<C-h>', " <cmd> TmuxNavigateLeft<CR>", { desc = "window left" })
--- vk.set('n', '<C-l>', " <cmd> TmuxNavigateRight<CR>", { desc = "window right" })
--- vk.set('n', '<C-j>', " <cmd> TmuxNavigateDown<CR>", { desc = "window down" })
--- vk.set('n', '<C-k>', " <cmd> TmuxNavigateUp<CR>", { desc = "window up" })
+vk.set('n', '<C-h>', ":TmuxNavigateLeft<CR>", { desc = "window left" })
+vk.set('n', '<C-l>', ":TmuxNavigateRight<CR>", { desc = "window right" })
+vk.set('n', '<C-j>', ":TmuxNavigateDown<CR>", { desc = "window down" })
+vk.set('n', '<C-k>', ":TmuxNavigateUp<CR>", { desc = "window up" })
 
 -- quickfix & loclist navigation
 vk.set("n", "<A-j>", " <cmd> cnext<CR>zz", { desc = "navigate quickfix list next" })
