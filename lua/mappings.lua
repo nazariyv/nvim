@@ -26,11 +26,12 @@ vk.set('n', '<Up>', 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "Mo
 vk.set('n', '<Down>', 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "Move down", expr = true })
 vk.set('n', '<leader>b', '<cmd> enew <CR>', { desc = "New buffer" })
 
+-- see comment in misc.lua why I am not using tmux navigator
 -- for tmux navigator
-vk.set('n', '<C-h>', " <cmd> TmuxNavigateLeft<CR>", { desc = "window left" })
-vk.set('n', '<C-l>', " <cmd> TmuxNavigateRight<CR>", { desc = "window right" })
-vk.set('n', '<C-j>', " <cmd> TmuxNavigateDown<CR>", { desc = "window down" })
-vk.set('n', '<C-k>', " <cmd> TmuxNavigateUp<CR>", { desc = "window up" })
+-- vk.set('n', '<C-h>', " <cmd> TmuxNavigateLeft<CR>", { desc = "window left" })
+-- vk.set('n', '<C-l>', " <cmd> TmuxNavigateRight<CR>", { desc = "window right" })
+-- vk.set('n', '<C-j>', " <cmd> TmuxNavigateDown<CR>", { desc = "window down" })
+-- vk.set('n', '<C-k>', " <cmd> TmuxNavigateUp<CR>", { desc = "window up" })
 
 -- quickfix & loclist navigation
 vk.set("n", "<A-j>", " <cmd> cnext<CR>zz", { desc = "navigate quickfix list next" })
