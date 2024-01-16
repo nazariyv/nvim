@@ -1,5 +1,7 @@
 local vk = vim.keymap
 
+-- DO NOT FORMAT THIS FILE
+
 -- General keymaps for normal mode
 vk.set("n", ";", ":", { desc = "enter command mode", nowait = true })
 vk.set("n", "<C-d>", "<C-d>zz", { desc = "when moving page down center" })
