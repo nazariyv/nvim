@@ -7,7 +7,7 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 
 opt.nu = true
-opt.relativenumber = true
+opt.relativenumber = false  -- L for using true
 opt.wrap = false
 opt.swapfile = false
 opt.backup = false
