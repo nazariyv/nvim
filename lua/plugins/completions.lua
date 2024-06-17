@@ -7,6 +7,9 @@ return {
         dependencies = "rafamadriz/friendly-snippets",
       },
       {
+        "github/copilot.vim",
+      },
+      {
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-nvim-lsp",
