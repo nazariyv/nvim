@@ -1,3 +1,3 @@
 # Docs
 
-git clone <this-repo> ~/.config/nvim
+git clone **this-repo** ~/.config/nvim
