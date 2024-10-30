@@ -11,6 +11,7 @@ vk.set("n", "<C-u>", "<C-u>zz", { desc = "when moving page up center" })
 -- vk.set('n', '<C-j>', '<C-w>j', { desc = "Window down" })
 -- vk.set('n', '<C-k>', '<C-w>k', { desc = "Window up" })
 vk.set('n', '<C-s>', '<cmd> w <CR>', { desc = "Save file" })
+vk.set('n', '<A-s>', '<cmd> w <CR>', { desc = "Save file" })
 vk.set('n', '<C-c>', '<cmd> %y+ <CR>', { desc = "Copy whole file" })
 vk.set("n", "<leader>y", '"+y', { desc = "yanks into +" })
 vk.set("n", "<leader>Y", '"+Y', { desc = "yanks into +" })
@@ -102,6 +103,7 @@ vk.set('v', '<leader>ca', function() vim.lsp.buf.code_action() end, { desc = "LS
 
 -- NvimTree keymaps
 vk.set('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', { desc = "Toggle nvimtree" })
+vk.set('n', '<A-n>', '<cmd> NvimTreeToggle <CR>', { desc = "Toggle nvimtree" })
 vk.set('n', '<leader>e', '<cmd> NvimTreeFocus <CR>', { desc = "Focus nvimtree" })
 
 -- Telescope keymaps
