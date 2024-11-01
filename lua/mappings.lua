@@ -1,5 +1,4 @@
 local vk = vim.keymap
-
 -- DO NOT FORMAT THIS FILE
 
 -- General keymaps for normal mode
@@ -79,6 +78,8 @@ vk.set('x', 'p', 'p:let @+=@0<CR>:let @"=@0<CR>', { desc = "Don't copy replaced 
 
 -- Comment keymaps
 vk.set('n', '<leader>/', function() require("Comment.api").toggle.linewise.current() end, { desc = "Toggle comment" })
+-- * for some reason this doesn't work
+-- vk.set('n', '<C-/>', function() require("Comment.api").toggle.linewise.current() end, { desc = "Toggle comment" })
 vk.set('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = "Toggle comment" })
 
 -- LSP keymaps
@@ -103,11 +104,14 @@ vk.set('v', '<leader>ca', function() vim.lsp.buf.code_action() end, { desc = "LS
 
 -- NvimTree keymaps
 vk.set('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', { desc = "Toggle nvimtree" })
-vk.set('n', '<A-n>', '<cmd> NvimTreeToggle <CR>', { desc = "Toggle nvimtree" })
+vk.set('n', '<leader>nn', '<cmd> NvimTreeToggle <CR>', { desc = "Toggle nvimtree" })
 vk.set('n', '<leader>e', '<cmd> NvimTreeFocus <CR>', { desc = "Focus nvimtree" })
 
 -- Telescope keymaps
+vk.set('n', '<leader>u', '<cmd> Telescope undo <CR>', { desc = "undo history" })
 vk.set('n', '<leader>ff', '<cmd> Telescope find_files <CR>', { desc = "Find files" })
+vk.set('n', '<leader>fd', '<cmd> Telescope diagnostics <CR>', { desc = "workspace diagnostics" })
+vk.set('n', '<leader>fr', '<cmd> Telescope resume <CR>', { desc = "resume last telescope window" })
 vk.set('n', '<leader>fa', '<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>', { desc = "Find all" })
 vk.set('n', '<leader>fw', '<cmd> Telescope live_grep <CR>', { desc = "Live grep" })
 vk.set('n', '<leader>fb', '<cmd> Telescope buffers <CR>', { desc = "Find buffers" })
