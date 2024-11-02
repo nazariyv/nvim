@@ -58,15 +58,3 @@ opt.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
 
--- ! this is ultra slow
--- ! ufo plugin allows to maintain treesitter folding without performance hit
--- folding with treesitter's help
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.opt.foldlevel = 99
--- vim.opt.foldcolumn = "1"
--- when crossing the fold with shift + { or }
--- the fold will be opened. this setting will
--- prevent that
--- vim.opt.foldopen:remove('block')
-
