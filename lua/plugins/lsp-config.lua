@@ -35,6 +35,8 @@ return {
           "bashls",
           "jsonls",
           "solidity_ls_nomicfoundation",
+          "dockerls",
+          "docker_compose_language_service"
         },
       })
     end,

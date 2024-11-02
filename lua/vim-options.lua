@@ -57,3 +57,14 @@ opt.updatetime = 250
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
+
+-- folding with treesitter's help
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldcolumn = "1"
+-- when crossing the fold with shift + { or }
+-- the fold will be opened. this setting will
+-- prevent that
+vim.opt.foldopen:remove('block')
+
