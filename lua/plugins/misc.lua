@@ -36,6 +36,9 @@ return {
       server = {
         -- on_attach = on_attach,
         capabilities = capabilities,
+        -- ensuring it's starting mason managed rust-analyzer
+        -- to avoid duplicate diagnostics if you also have a system-wide installation
+        cmd = { vim.fn.stdpath("data") .. "/mason/bin/rust-analyzer"},
       },
     },
     config = function(_, opts)

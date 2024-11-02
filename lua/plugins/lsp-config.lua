@@ -9,7 +9,6 @@ return {
       local ensure_installed = {
         "shellcheck",
         "black",
-        "rust-analyzer",
       }
       vim.api.nvim_create_user_command("MasonInstallAll", function()
         if ensure_installed and #ensure_installed > 0 then
@@ -51,7 +50,6 @@ return {
       lspconfig.ruff_lsp.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.svelte.setup({ capabilities = capabilities })
-      -- lspconfig.rust_analyzer.setup({ capabilities = capabilities })
     end,
   },
 }
