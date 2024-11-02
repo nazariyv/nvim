@@ -1,5 +1,12 @@
+vim.opt.foldmethod = "manual"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+vim.opt.foldcolumn = "0"
+vim.opt.foldopen:remove('block')
+
 -- sadge...
--- folds are too slow
+-- folds are too slow with treesitter
 -- ufo plugin is too buggy
 -- cursed to never fold in neovim
 
