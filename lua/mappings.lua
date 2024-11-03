@@ -108,6 +108,8 @@ vk.set('n', '<leader>nn', '<cmd> NvimTreeToggle <CR>', { desc = "Toggle nvimtree
 vk.set('n', '<leader>e', '<cmd> NvimTreeFocus <CR>', { desc = "Focus nvimtree" })
 
 -- Telescope keymaps
+-- NOTE: to look for something (let's say "word") but in a specific location (let's say /keep/winning)
+-- do <leader>fw then type "word", then <C-Space> now this is path filter, type "/keep/winning"
 vk.set('n', '<leader>u', '<cmd> Telescope undo <CR>', { desc = "undo history" })
 vk.set('n', '<leader>ff', '<cmd> Telescope find_files <CR>', { desc = "Find files" })
 vk.set('n', '<leader>fd', '<cmd> Telescope diagnostics <CR>', { desc = "workspace diagnostics" })
@@ -123,3 +125,8 @@ vk.set('n', '<leader>gt', '<cmd> Telescope git_status <CR>', { desc = "Git statu
 vk.set('n', '<leader>pt', '<cmd> Telescope terms <CR>', { desc = "Pick hidden term" })
 vk.set('n', '<leader>th', '<cmd> Telescope themes <CR>', { desc = "Nvchad themes" })
 vk.set('n', '<leader>ma', '<cmd> Telescope marks <CR>', { desc = "Telescope bookmarks" })
+
+-- Todos
+vim.keymap.set("n", "]t", function() require("todo-comments").jump_next() end, { desc = "Next todo comment" })
+vim.keymap.set("n", "[t", function() require("todo-comments").jump_prev() end, { desc = "Previous todo comment" })
+vim.keymap.set("n", "<leader>tt", '<cmd> TodoTelescope <CR>' , { desc = "Show todo telescope" })
