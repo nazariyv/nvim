@@ -1,7 +1,7 @@
 -- -- views can only be fully collapsed with the global statusline
--- vim.opt.laststatus = 3
+vim.opt.laststatus = 3
 --
--- return {
+return {
 --   {
 --     "yetone/avante.nvim",
 --     event = "VeryLazy",
@@ -48,9 +48,9 @@
 --       },
 --     },
 --   },
---   {
---     "MeanderingProgrammer/render-markdown.nvim",
---     opts = { file_types = { "markdown", "Avante" } },
---     ft = { "markdown", "Avante" },
---   }
--- }
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    opts = { file_types = { "markdown", "Avante" } },
+    ft = { "markdown", "Avante" },
+  }
+}
