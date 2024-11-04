@@ -24,7 +24,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
-          "ts_ls",
+          "tsserver",
           "html",
           "cssls",
           "clangd",
@@ -48,7 +48,7 @@ return {
 
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.ts_ls.setup({ capabilities = capabilities })
+      lspconfig.tsserver.setup({ capabilities = capabilities })
       lspconfig.ruff_lsp.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.svelte.setup({ capabilities = capabilities })
