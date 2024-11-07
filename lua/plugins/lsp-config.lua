@@ -28,7 +28,7 @@ return {
           "html",
           "cssls",
           "clangd",
-          "ruff_lsp",
+          "ruff",
           "svelte",
           "pyright",
           "graphql",
@@ -49,7 +49,7 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
-      lspconfig.ruff_lsp.setup({ capabilities = capabilities })
+      lspconfig.ruff.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.svelte.setup({ capabilities = capabilities })
     end,

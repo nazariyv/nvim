@@ -29,23 +29,6 @@ return {
     end,
   },
   {
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
-    dependencies = "neovim/nvim-lspconfig",
-    opts = {
-      server = {
-        -- on_attach = on_attach,
-        capabilities = capabilities,
-        -- ensuring it's starting mason managed rust-analyzer
-        -- to avoid duplicate diagnostics if you also have a system-wide installation
-        cmd = { vim.fn.stdpath("data") .. "/mason/bin/rust-analyzer"},
-      },
-    },
-    config = function(_, opts)
-      require("rust-tools").setup(opts)
-    end,
-  },
-  {
     'saecki/crates.nvim',
     ft = { 'rust', 'toml' },
     config = function(_, opts)
@@ -68,5 +51,15 @@ return {
       config = function()
           require('telescope').load_extension('themes')
       end
-  }
+  },
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^4",
+		lazy = false,
+		["rust-analyzer"] = {
+			cargo = {
+				allFeatures = true,
+			},
+		},
+	},
 }
