@@ -1,11 +1,11 @@
 return {
   {
-	"ellisonleao/gruvbox.nvim",
-	-- priority = 1000,
-	-- config = function()
-	-- 	vim.o.background = "dark"
-	-- 	vim.cmd([[colorscheme gruvbox]])
-	-- end,
+    "ellisonleao/gruvbox.nvim",
+    -- priority = 1000,
+    -- config = function()
+    -- 	vim.o.background = "dark"
+    -- 	vim.cmd([[colorscheme gruvbox]])
+    -- end,
   },
   {
     "catppuccin/nvim",
@@ -52,5 +52,13 @@ return {
       vim.cmd([[colorscheme catppuccin]])
     end,
   },
-  { "rose-pine/neovim", name = "rose-pine" }
+  { "rose-pine/neovim",     name = "rose-pine" },
+  { "rebelot/kanagawa.nvim" },
+  { "EdenEast/nightfox.nvim" },
+  { "folke/tokyonight.nvim" },
+  { "navarasu/onedark.nvim" },
+  { "olimorris/onedarkpro.nvim" },
+  { "sainnhe/sonokai" },
+  { "shaunsingh/nord.nvim" },
+  { "neanias/everforest-nvim" },
 }
