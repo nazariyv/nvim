@@ -1,13 +1,23 @@
 local opt = vim.opt
+local g = vim.g
+-- local o = vim.o
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+g.python_recommended_style = 0
+g.rust_recommended_style = 0
+opt.tabstop = 2
+opt.smartindent = true
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
+opt.copyindent = true
+opt.indentkeys = "o,O,<Return>,0{,0},0),0],0>,!^F"
+
+opt.lazyredraw = false
+
 vim.g.mapleader = " "
 
 opt.nu = true
-opt.relativenumber = false  -- L for using true
+opt.relativenumber = false -- L for using true
 opt.wrap = false
 opt.swapfile = false
 opt.backup = false
@@ -57,4 +67,3 @@ opt.updatetime = 250
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
-

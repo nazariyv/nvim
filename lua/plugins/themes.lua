@@ -2,10 +2,10 @@ return {
   {
     "ellisonleao/gruvbox.nvim",
     -- priority = 1000,
-    -- config = function()
-    -- 	vim.o.background = "dark"
-    -- 	vim.cmd([[colorscheme gruvbox]])
-    -- end,
+    config = function()
+    	vim.o.background = "dark"
+    	vim.cmd([[colorscheme gruvbox]])
+    end,
   },
   {
     "catppuccin/nvim",
@@ -48,8 +48,8 @@ return {
     },
     config = function(_, opts)
       require("catppuccin").setup(opts)
-      vim.o.background = "dark"
-      vim.cmd([[colorscheme catppuccin]])
+      -- vim.o.background = "dark"
+      -- vim.cmd([[colorscheme catppuccin]])
     end,
   },
   { "rose-pine/neovim",     name = "rose-pine" },

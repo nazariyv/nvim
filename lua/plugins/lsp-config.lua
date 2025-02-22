@@ -27,7 +27,7 @@ return {
           "ts_ls",
           "html",
           "cssls",
-          "clangd",
+          -- "clangd",
           "ruff",
           "svelte",
           "pyright",
