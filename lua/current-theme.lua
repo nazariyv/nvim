@@ -1,1 +1,1 @@
-vim.cmd("colorscheme unokai")
+vim.cmd("colorscheme gruvbox")
