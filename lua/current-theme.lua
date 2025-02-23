@@ -1,1 +1,1 @@
-vim.cmd("colorscheme dayfox")
+vim.cmd("colorscheme unokai")
