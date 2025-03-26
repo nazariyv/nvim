@@ -1,20 +1,30 @@
 local opt = vim.opt
-local g = vim.g
+-- local g = vim.g
 -- local o = vim.o
 
-g.python_recommended_style = 0
-g.rust_recommended_style = 0
+-- WARN: these options are hell
+-- never ever use them again. here as warning
+-- indentation goes all crazy if you uncomment these
+-- g.python_recommended_style = 0
+-- g.rust_recommended_style = 0
+
 opt.tabstop = 2
-opt.smartindent = true
 opt.shiftwidth = 2
 opt.expandtab = true
-opt.autoindent = true
-opt.copyindent = true
-opt.indentkeys = "o,O,<Return>,0{,0},0),0],0>,!^F"
 
 opt.lazyredraw = false
 
 vim.g.mapleader = " "
+
+-- Indentation settings
+opt.expandtab = true -- Convert tabs to spaces
+opt.smartindent = true -- Smart autoindenting when starting a new line
+opt.autoindent = true -- Copy indent from current line when starting a new line
+opt.cindent = true -- Stricter indentation rules for C programs
+opt.shiftwidth = 2 -- Number of spaces for each step of indent
+opt.tabstop = 2 -- Number of spaces a tab counts for
+opt.softtabstop = 2 -- Number of spaces a tab counts for while editing
+opt.shiftround = true -- Round indent to multiple of 'shiftwidth'
 
 opt.nu = true
 opt.relativenumber = false -- L for using true
@@ -38,7 +48,6 @@ opt.cursorline = true
 -- Indenting
 opt.expandtab = true
 opt.shiftwidth = 2
-opt.smartindent = true
 opt.tabstop = 2
 opt.softtabstop = 2
 
