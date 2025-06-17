@@ -29,10 +29,10 @@ return {
     end,
   },
   {
-    'saecki/crates.nvim',
-    ft = { 'rust', 'toml' },
+    "saecki/crates.nvim",
+    ft = { "rust", "toml" },
     config = function(_, opts)
-      local crates = require('crates')
+      local crates = require("crates")
       crates.setup(opts)
       crates.show()
     end,
@@ -44,23 +44,23 @@ return {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
-    }
+    },
   },
   {
-      'andrew-george/telescope-themes',
-      config = function()
-          require('telescope').load_extension('themes')
-      end
+    "andrew-george/telescope-themes",
+    config = function()
+      require("telescope").load_extension("themes")
+    end,
   },
-	{
-		"mrcjkb/rustaceanvim",
-		version = "^4",
-		lazy = false,
-		["rust-analyzer"] = {
-			cargo = {
-				allFeatures = true,
-			},
-		},
-	},
-  { "tpope/vim-fugitive" }
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6",
+    lazy = false,
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+    },
+  },
+  { "tpope/vim-fugitive" },
 }

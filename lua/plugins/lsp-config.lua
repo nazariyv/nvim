@@ -23,7 +23,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "rust_analyzer",
+          -- "rust_analyzer",
           "ts_ls",
           "html",
           "cssls",
@@ -36,7 +36,7 @@ return {
           "jsonls",
           "solidity_ls_nomicfoundation",
           "dockerls",
-          "docker_compose_language_service"
+          "docker_compose_language_service",
         },
       })
     end,
@@ -50,17 +50,17 @@ return {
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
       lspconfig.ruff.setup({ capabilities = capabilities })
-      lspconfig.pyright.setup({ 
+      lspconfig.pyright.setup({
         capabilities = capabilities,
         settings = {
           python = {
             analysis = {
               autoSearchPaths = true,
               useLibraryCodeForTypes = true,
-              diagnosticMode = "workspace"
-            }
-          }
-        }
+              diagnosticMode = "workspace",
+            },
+          },
+        },
       })
       lspconfig.svelte.setup({ capabilities = capabilities })
     end,
