@@ -1,1 +1,1 @@
-vim.cmd("colorscheme vaporwave")
+vim.cmd("colorscheme kanagawa-dragon")
