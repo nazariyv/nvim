@@ -49,6 +49,16 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
+
+      -- -- helps you debug what sets up duplicate servers
+      -- local orig = lspconfig.ts_ls.setup
+      -- lspconfig.ts_ls.setup = function(opts)
+      --   vim.schedule(function()
+      --     vim.notify("ts_ls.setup called from:\n" .. debug.traceback("", 2), vim.log.levels.WARN)
+      --   end)
+      --   return orig(opts)
+      -- end
+
       lspconfig.ruff.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({
         capabilities = capabilities,

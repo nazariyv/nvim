@@ -1,66 +1,75 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 return {
-  -- poetry causes issues: https://github.com/christoomey/vim-tmux-navigator/issues/230
-  -- to have tmux navigator work nominally, rather than running poetry shell
-  -- and then nvim .
-  -- do: poetry run nvim
-  -- ! Note: this plugin requires tmux config as well
-  {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
-  },
-  {
-    "numToStr/Comment.nvim",
-    config = function(_, opts)
-      require("Comment").setup(opts)
-    end,
-  },
-  {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    opts = {}, -- this is equivalent to setup({}) function
-  },
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-    init = function()
-      vim.g.rustfmt_autosave = 1
-    end,
-  },
-  {
-    "saecki/crates.nvim",
-    ft = { "rust", "toml" },
-    config = function(_, opts)
-      local crates = require("crates")
-      crates.setup(opts)
-      crates.show()
-    end,
-  },
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-  },
-  {
-    "andrew-george/telescope-themes",
-    config = function()
-      require("telescope").load_extension("themes")
-    end,
-  },
-  {
-    "mrcjkb/rustaceanvim",
-    version = "^6",
-    lazy = false,
-    ["rust-analyzer"] = {
-      cargo = {
-        allFeatures = true,
-      },
-    },
-  },
-  { "tpope/vim-fugitive" },
+	-- poetry causes issues: https://github.com/christoomey/vim-tmux-navigator/issues/230
+	-- to have tmux navigator work nominally, rather than running poetry shell
+	-- and then nvim .
+	-- do: poetry run nvim
+	-- ! Note: this plugin requires tmux config as well
+	{
+		"christoomey/vim-tmux-navigator",
+		lazy = false,
+	},
+	{
+		"numToStr/Comment.nvim",
+		config = function(_, opts)
+			require("Comment").setup(opts)
+		end,
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {}, -- this is equivalent to setup({}) function
+	},
+	{
+		"rust-lang/rust.vim",
+		ft = "rust",
+		init = function()
+			vim.g.rustfmt_autosave = 1
+		end,
+	},
+	{
+		"saecki/crates.nvim",
+		ft = { "rust", "toml" },
+		config = function(_, opts)
+			local crates = require("crates")
+			crates.setup(opts)
+			crates.show()
+		end,
+	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
+	{
+		"andrew-george/telescope-themes",
+		config = function()
+			require("telescope").load_extension("themes")
+		end,
+	},
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^6",
+		lazy = false,
+		init = function()
+			vim.g.rustaceanvim = {
+				server = {
+					cmd = { "rustup", "run", "1.87.0", "rust-analyzer" }, -- This forces using toolchain version
+					settings = {
+						["rust-analyzer"] = {
+							cargo = {
+								allFeatures = true,
+							},
+						},
+					},
+				},
+			}
+		end,
+	},
+	{ "tpope/vim-fugitive" },
 }
