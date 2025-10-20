@@ -23,7 +23,7 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					-- "rust_analyzer",
+					"rust_analyzer",
 					"ts_ls",
 					"html",
 					"cssls",
@@ -66,9 +66,19 @@ return {
 				},
 			})
 			vim.lsp.config("svelte", { capabilities = capabilities })
+			vim.lsp.config("rust_analyzer", {
+				capabilities = capabilities,
+				cmd = { "rustup", "run", "stable", "rust-analyzer" },
+				settings = {
+					["rust-analyzer"] = {
+						cargo = { allFeatures = true },
+						check = { command = "clippy" },
+					},
+				},
+			})
 
 			-- Enable them (activates per their filetypes)
-			vim.lsp.enable({ "lua_ls", "ts_ls", "ruff", "pyright", "svelte" })
+			vim.lsp.enable({ "lua_ls", "ts_ls", "ruff", "pyright", "svelte", "rust_analyzer" })
 
 			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			--
