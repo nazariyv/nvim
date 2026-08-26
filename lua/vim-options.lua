@@ -42,7 +42,25 @@ opt.colorcolumn = "80"
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
-opt.clipboard = "unnamedplus"
+if (os.getenv("SSH_TTY") or "") ~= "" and (os.getenv("DISPLAY") or "") == "" then
+  -- Over SSH there is no X clipboard, so "unnamedplus" has no provider and yanks stay
+  -- inside this one nvim process. Instead, send every yank to the LOCAL machine's
+  -- clipboard through the terminal (OSC 52); registers stay local so `p` is instant.
+  -- Paste FROM the local clipboard with the terminal's paste (Ctrl+V / right click):
+  -- Windows Terminal does not answer OSC 52 reads, so `p` cannot fetch it.
+  opt.clipboard = ""
+  local osc52_copy = require("vim.ui.clipboard.osc52").copy("+")
+  vim.api.nvim_create_autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup("osc52_yank", { clear = true }),
+    callback = function()
+      if vim.v.event.operator == "y" then
+        osc52_copy(vim.v.event.regcontents, vim.v.event.regtype)
+      end
+    end,
+  })
+else
+  opt.clipboard = "unnamedplus"
+end
 opt.cursorline = true
 
 -- Indenting
